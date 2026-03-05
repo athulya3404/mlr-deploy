@@ -19,7 +19,7 @@ align-items:center;
 background:white;
 padding:40px;
 border-radius:10px;
-width:350px;
+width:380px;
 box-shadow:0 5px 20px rgba(0,0,0,0.3);
 text-align:center;
 }
@@ -48,6 +48,12 @@ button:hover{
 background:#3c6fd1;
 }
 
+.result{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+}
+
 </style>
 
 </head>
@@ -60,20 +66,29 @@ background:#3c6fd1;
 
 <form action="/predict" method="post">
 
-<label>Years of Experience</label>
-<input type="text" name="years" placeholder="Enter years">
+<label>Experience Years</label>
+<input type="text" name="experience" placeholder="Enter experience">
 
-<label>Education Level (1-4)</label>
-<input type="text" name="education" placeholder="Enter level">
+<label>Education Years</label>
+<input type="text" name="education" placeholder="Enter education">
+
+<label>Monthly Hours</label>
+<input type="text" name="hours" placeholder="Enter hours">
+
+<label>Performance Score</label>
+<input type="text" name="score" placeholder="Enter score">
 
 <button type="submit">Predict Salary</button>
 
-<h3>{{ prediction_text }}</h3>
-
 </form>
+
+<div class="result">
+
+{{ prediction_text }}
+
+</div>
 
 </div>
 
 </body>
-
 </html>

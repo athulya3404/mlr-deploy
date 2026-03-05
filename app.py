@@ -13,15 +13,17 @@ def home():
 @app.route("/predict", methods=["POST"])
 def predict():
 
-    years = float(request.form["years"])
-    education = float(request.form["education"])
+    exp = float(request.form["experience"])
+    edu = float(request.form["education"])
+    hours = float(request.form["hours"])
+    score = float(request.form["score"])
 
-    features = np.array([[years, education]])
+    features = np.array([[exp, edu, hours, score]])
 
     prediction = model.predict(features)
 
     return render_template("index.html",
-           prediction_text="Predicted Salary : ₹{:,.0f}".format(prediction[0]))
+            prediction_text="Predicted Salary : {}".format(round(prediction[0],2)))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5003)
