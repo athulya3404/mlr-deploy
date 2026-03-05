@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Multiple Linear Regression</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(135deg,#36d1dc,#5b86e5);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:10px;
+width:350px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:20px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#5b86e5;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#3c6fd1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Multiple Linear Regression</h2>
+
+<form action="/predict" method="post">
+
+<label>Years of Experience</label>
+<input type="text" name="years" placeholder="Enter years">
+
+<label>Education Level (1-4)</label>
+<input type="text" name="education" placeholder="Enter level">
+
+<button type="submit">Predict Salary</button>
+
+<h3>{{ prediction_text }}</h3>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
